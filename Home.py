@@ -164,7 +164,7 @@ companies = st.sidebar.multiselect("Select Company", default=CFPBApiClient.COMPA
 size = st.sidebar.slider("Number of Results", min_value=5, max_value=100, value=20, step=1, format="%d", key=None)
 # Select the time interval for data retrieval
 start_date = st.sidebar.date_input("Start Date", value=datetime.date(2023, 1, 1), min_value=None, max_value=date.today(), format="MM/DD/YYYY", key=None)
-end_date = st.sidebar.date_input("End Date", value=datetime.date(2023, 12, 31), min_value=start_date, max_value=date.today(), format="MM/DD/YYYY", key=None)
+end_date = st.sidebar.date_input("End Date", value=max(datetime.date(2023, 12, 31), start_date), min_value=start_date, max_value=date.today(), format="MM/DD/YYYY", key=None)
 # Selection Criteria
 has_narrative = st.sidebar.checkbox("Has Narrative", value=True, key=None)
 
